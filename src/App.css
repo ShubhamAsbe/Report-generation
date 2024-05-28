@@ -1,3 +1,6 @@
+@import 'tailwindcss/tailwind.css';
+@import './HeaderAndFooter.css';
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.page-break {
+  page-break-before: always;
 }

@@ -1,0 +1,63 @@
+@import 'tailwindcss/tailwind.css';
+@import './HeaderAndFooter.css';
+
+.print-preview-button {
+    margin: 20px;
+  }
+  
+  .print-component {
+    display: none;
+  }
+  
+  @media print {
+    .print-preview-button {
+      display: none;
+    }
+  
+    /* .print-component {
+      display: block;
+    } */
+
+    .print-component {
+      display: none;
+      @media print {
+        display: table;
+        .table-footer > tr > td{
+          /* text-align: center; */
+          background-color: grey;
+          color: white;
+        }
+      }
+    }
+  
+    /* .print-footer {
+      position: fixed;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0.5cm; 
+      background-color: white;
+      text-align: center;
+      z-index: 1;
+      padding: 1% 0%;
+    } */
+  
+    .print-content {
+      width: 100%;
+      margin-bottom: 2cm; /* Adjust to be at least the height of the footer */
+      page-break-inside: avoid;
+      /* border: 2px solid red; */
+    }
+  
+    .content {
+      /* Ensure the content is high enough to account for the footer */
+
+      padding-bottom: 2cm; /* Adjust to match the footer height */
+    }
+
+    
+  }
+  
